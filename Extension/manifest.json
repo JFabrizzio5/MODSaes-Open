@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Saes horario",
+    "version": "1.0",
+    "description": "Permite seleccionar filas de una tabla y abrir un modal con las seleccionadas.",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"], 
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+ 
+    }
+  }
+  

@@ -1,0 +1,20 @@
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  input {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
