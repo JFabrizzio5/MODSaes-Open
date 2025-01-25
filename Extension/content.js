@@ -58,8 +58,8 @@ if (table) {
 
     table.querySelectorAll("tbody tr").forEach((row, index) => {
       if (index === 0) return; // Saltar la fila del encabezado
-      const materiaCell = row.children[2]; // Celda de "Asignatura"
-      const maestroCell = row.children[3]; // Celda de "Profesor"
+      const materiaCell = row.children[1]; // Celda de "Asignatura"
+      const maestroCell = row.children[2]; // Celda de "Profesor"
 
       const matchesMaestro = !searchMaestro || maestroCell.textContent.toLowerCase().includes(searchMaestro);
       const matchesMateria = !searchMateria || materiaCell.textContent.toLowerCase().includes(searchMateria);
@@ -274,22 +274,75 @@ if (table) {
     modalTable.appendChild(modalTableBody);
     modalContent.appendChild(modalTable);
 
-    // Evaluar advertencias y descargar HTML
+    // Evaluar advertencias
     evaluateWarnings();
-    downloadHTML();
 
-    // Crear pie con enlaces
-    const footer = document.createElement("div");
-    footer.style.marginTop = "20px";
-    footer.style.textAlign = "center";
-    footer.style.fontSize = "14px";
-    footer.style.color = "#555";
-    footer.innerHTML = `
-      <p>Desarrollado por Joseph Fabrizzio</p>
-      <p><a href="https://github.com/JFabrizzio5" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/joseph-fabrizzio-hernandez-gonzalez-045b91270/" target="_blank">LinkedIn</a></p>
-    `;
-    modalContent.appendChild(footer);
+// Crear botón de descarga dentro del modal
+const downloadButton = document.createElement("button");
+downloadButton.textContent = "Descargar HTML";
+downloadButton.style.marginTop = "10px";
+downloadButton.style.backgroundColor = "#008CBA";
+downloadButton.style.color = "white";
+downloadButton.style.padding = "10px 15px";
+downloadButton.style.border = "none";
+downloadButton.style.borderRadius = "5px";
+downloadButton.style.cursor = "pointer"; // Añadido para mejorar la interacción
+downloadButton.addEventListener("click", downloadHTML);
+modalContent.appendChild(downloadButton);
+
+// Centrar el contenido del modal
+modalContent.style.textAlign = "center"; // Centrar todos los elementos dentro de modalContent
+
+// Crear salto de línea
+modalContent.appendChild(document.createElement("br"));
+
+// Contenedor para los enlaces de redes sociales
+const linksContainer = document.createElement("div");
+linksContainer.style.marginTop = "10px";
+linksContainer.style.display = "flex"; // Mostrar los enlaces en línea
+linksContainer.style.gap = "15px"; // Espacio entre los enlaces
+linksContainer.style.justifyContent = "center"; // Centrar los enlaces horizontalmente
+
+// Enlace de LinkedIn
+const linkedinLink = document.createElement("a");
+linkedinLink.href = "https://www.linkedin.com/in/joseph-fabrizzio-hernandez-gonzalez-045b91270/"; // Cambiar por tu LinkedIn
+linkedinLink.textContent = "LinkedIn";
+linkedinLink.style.textDecoration = "none"; // Eliminar subrayado
+linkedinLink.style.color = "#008CBA"; // Color para el enlace
+linkedinLink.target = "_blank"; // Abrir en nueva pestaña
+linksContainer.appendChild(linkedinLink);
+
+// Enlace de GitHub
+const githubLink = document.createElement("a");
+githubLink.href = "https://github.com/JFabrizzio5"; // Cambiar por tu GitHub
+githubLink.textContent = "GitHub";
+githubLink.style.textDecoration = "none";
+githubLink.style.color = "#008CBA";
+githubLink.target = "_blank"; // Abrir en nueva pestaña
+linksContainer.appendChild(githubLink);
+
+// Enlace del repositorio
+const REPOLink = document.createElement("a");
+REPOLink.href = "https://github.com/JFabrizzio5/ExtensionHorarioSAES"; // Cambiar por tu GitHub
+REPOLink.textContent = "Repositorio";
+REPOLink.style.textDecoration = "none";
+REPOLink.style.color = "#008CBA";
+REPOLink.target = "_blank"; // Abrir en nueva pestaña
+linksContainer.appendChild(REPOLink);
+
+// Agregar el contenedor de enlaces al modal
+modalContent.appendChild(linksContainer);
+
+// Salto de línea antes de Desarrollador
+modalContent.appendChild(document.createElement("br"));
+
+// Agregar texto "Desarrollador: Joseph Fabrizzio"
+const developerText = document.createElement("p");
+developerText.textContent = "Desarrollador: Joseph Fabrizzio";
+developerText.style.fontStyle = "italic"; // Estilo en cursiva
+developerText.style.marginTop = "10px";
+modalContent.appendChild(developerText);
+
 
     // Mostrar el modal
     modal.style.display = "block";
