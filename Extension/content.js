@@ -1,3 +1,4 @@
+
 // Seleccionar la tabla
 const table = document.querySelector("#ctl00_mainCopy_dbgHorarios");
 if (table) {
@@ -224,7 +225,8 @@ if (table) {
         th.textContent = header;
         th.style.border = "1px solid #ddd";
         th.style.padding = "10px 15px";
-        th.style.backgroundColor = "#f4f4f4";
+        th.style.backgroundColor = "#800000";  // Color de fondo para los titulares
+        th.style.color = "white"; // Mejor contraste
         modalTableRow.appendChild(th);
       }
     );
@@ -277,7 +279,8 @@ if (table) {
     // Evaluar advertencias
     evaluateWarnings();
 
-// Crear botón de descarga dentro del modal
+    // Crear botón de descarga dentro del modal
+ 
 const downloadButton = document.createElement("button");
 downloadButton.textContent = "Descargar HTML";
 downloadButton.style.marginTop = "10px";
@@ -342,9 +345,8 @@ developerText.textContent = "Desarrollador: Joseph Fabrizzio";
 developerText.style.fontStyle = "italic"; // Estilo en cursiva
 developerText.style.marginTop = "10px";
 modalContent.appendChild(developerText);
-
-
-    // Mostrar el modal
+    // Mostrar modal
     modal.style.display = "block";
   });
 }
+
