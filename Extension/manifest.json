@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Saes horario",
-    "version": "1.0",
-    "description": "Permite seleccionar filas de una tabla y abrir un modal con las seleccionadas.",
+    "name": "ModSaes-Open",
+    "version": "0.1",
+    "description": "Extension y iniciativa de codigo abierto para mejorar experiencia con el saes ",
     "permissions": ["activeTab", "scripting"],
     "host_permissions": ["<all_urls>"],
     "content_scripts": [
