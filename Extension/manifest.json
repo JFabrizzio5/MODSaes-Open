@@ -7,7 +7,8 @@
     "host_permissions": ["<all_urls>"],
     "content_scripts": [
       {
-        "matches": ["<all_urls>"], 
+        "matches": [  "https://*.saes.*.ipn.mx/*",
+                      "http://*.saes.*.ipn.mx/*"], 
         "js": ["content.js"]
       }
     ],
