@@ -4,11 +4,11 @@
     "version": "0.1",
     "description": "Extension y iniciativa de codigo abierto para mejorar experiencia con el saes ",
     "permissions": ["activeTab"],
-    "host_permissions": ["<all_urls>"],
+    "host_permissions": [ "https://*.saes.*.ipn.mx/*",
+                      "http://*.saes.*.ipn.mx/*"],
     "content_scripts": [
       {
-        "matches": [  "https://*.saes.*.ipn.mx/*",
-                      "http://*.saes.*.ipn.mx/*"], 
+        "matches": [ ], 
         "js": ["content.js"]
       }
     ],
