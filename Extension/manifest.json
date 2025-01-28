@@ -3,7 +3,7 @@
     "name": "ModSaes-Open",
     "version": "0.1",
     "description": "Extension y iniciativa de codigo abierto para mejorar experiencia con el saes ",
-    "permissions": ["activeTab", "scripting"],
+    "permissions": [],
     "host_permissions": ["<all_urls>"],
     "content_scripts": [
       {
