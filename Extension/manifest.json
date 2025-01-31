@@ -1,25 +1,23 @@
 {
-    "manifest_version": 3,
-    "name": "ModSaes-Open",
-    "version": "0.1",
-    "description": "Extension y iniciativa de codigo abierto para mejorar experiencia con el saes ",
-    "permissions": ["activeTab"],
+  "manifest_version": 3,
+  "name": "ModSaes-Open",
+  "version": "0.1",
+  "description": "Extensión e iniciativa de código abierto para mejorar la experiencia con el SAES.",
+  "permissions": [],
   "host_permissions": [
-    "https://*.saes.*.ipn.mx/*",
-    "http://*.saes.*.ipn.mx/*"
+    "https://*.ipn.mx/*",
+    "http://*.ipn.mx/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://*.saes.*.ipn.mx/*",
-        "http://*.saes.*.ipn.mx/*"
+        "https://*.ipn.mx/*",
+        "http://*.ipn.mx/*"
       ],
       "js": ["content.js"]
     }
-    ],
-    "action": {
-      "default_popup": "popup.html"
- 
-    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
   }
-  
+}
